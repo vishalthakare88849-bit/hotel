@@ -54,6 +54,7 @@ router.get('/:tastetype', async (req,res)=>{
     }
 })
 
+// put method
 router.put('/:id',async (req,res)=>{
     try{
         const menuId=req.params.id;
@@ -77,6 +78,7 @@ router.put('/:id',async (req,res)=>{
 
 })
 
+//delete method 
 router.delete('/:id',async (req,res)=>{
     try{
         const MenuId = req.params.id;
