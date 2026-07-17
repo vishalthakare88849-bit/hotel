@@ -1,0 +1,18 @@
+{
+  "name": "node_tutorial_1",
+  "version": "1.0.0",
+  "description": "Its a nodejs tutorial by Vishal",
+  "license": "ISC",
+  "author": "Vishal Thakare",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4",
+    "nodemon": "^3.1.14"
+  }
+}
