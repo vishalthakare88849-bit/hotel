@@ -5,10 +5,13 @@ const db = require('./db')
 
 const bodyParser= require('body-parser');
 app.use(bodyParser.json());//req.body
+require('dotenv').config()
 
 app.get('/', function(req,res){
     res.send('Welcome to our hotel Vishal_ColdDrink')
 })  
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(3000, function(){ 
     console.log("succesfully run server!!!!");
