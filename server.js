@@ -1,24 +1,25 @@
-const express = require('express')
+const express = require('express');
 const app = express();
 
-const db = require('./db')
+require('dotenv').config();
 
-const bodyParser= require('body-parser');
-app.use(bodyParser.json());//req.body
-require('dotenv').config()
+const db = require('./db');
 
-app.get('/', function(req,res){
-    res.send('Welcome to our hotel Vishal_ColdDrink')
-})  
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+    res.send('Welcome to our hotel Vishal_ColdDrink');
+});
+
+const personRoutes = require('./routes/personRoutes');
+const menuRoutes = require('./routes/menuRoutes');
+
+app.use('/person', personRoutes);
+app.use('/menu', menuRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(3000, function(){ 
-    console.log("succesfully run server!!!!");
-});   
-
-const personRoutes = require('./routes/personRoutes');//Import the router file
-const menuRoutes = require('./routes/menuRoutes');//Import the router file
-
-app.use('/person',personRoutes);//use the router
-app.use('/menu',menuRoutes);//use the router 
+app.listen(PORT, () => {
+    console.log(`Successfully running server on port ${PORT}`);
+});
